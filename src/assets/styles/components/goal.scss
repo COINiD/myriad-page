@@ -1,0 +1,21 @@
+@import "shared/colors.scss";
+@import "shared/fonts.scss";
+
+.goal {
+  &__title {
+    font-size: $font-size-medium;
+  }
+
+  &__amount {
+    display: inline;
+    border-radius: 16px;
+    background-color: $white;
+    padding: 6px 15px;
+    color: $black;
+    font-weight: bold;
+
+    &--completed {
+      background-color: $green;
+    }
+  }
+}
