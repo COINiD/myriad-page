@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react'
 import HeaderSection from './sections/HeaderSection'
 import PledgeSection from './sections/PledgeSection'
 import GoalsSection from './sections/GoalsSection'
+import PlatformsSection from './sections/PlatformsSection'
 import './assets/styles/shared/app.css'
 
 class App extends PureComponent {
   state = {
-    pledged: 2.021,
+    pledged: 4,
     goal: 5,
     goals: [
       {
@@ -35,6 +36,7 @@ class App extends PureComponent {
         <HeaderSection />
         <PledgeSection goal={goal} pledged={pledged} />
         <GoalsSection goals={goals} pledged={pledged} />
+        <PlatformsSection />
       </div>
     )
   }
