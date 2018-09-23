@@ -23,7 +23,7 @@ class PledgeSection extends PureComponent {
         <em className="pledge__notice">
           Collected Myriads are counted towards the goal at the current exchange rate.
           <br />
-          {`Deadline for crowdfunding is ${endDate.format('D MMMM YYYY @ HH:mm z')}.`}
+          {`Deadline for crowdfunding is ${endDate.format('MMMM D, YYYY @ HH:mm z')}.`}
         </em>
       </div>
     )
