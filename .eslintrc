@@ -4,6 +4,7 @@
   "plugins": ["react", "jsx-a11y", "import"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
     "import/extensions": [1, "never", { "svg": "always" }],
     "import/no-extraneous-dependencies": [
       "error",
