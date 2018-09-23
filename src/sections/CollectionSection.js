@@ -10,7 +10,7 @@ class CollectionSection extends PureComponent {
         address: PropTypes.string.isRequired,
       }),
     ).isRequired,
-    insights: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+    insights: PropTypes.shape({}).isRequired,
   }
 
   renderCollection = () => {

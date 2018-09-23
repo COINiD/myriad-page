@@ -64,20 +64,20 @@ class App extends PureComponent {
     })
   }
 
-  convertToBTC = (ticker, balance) => {
-    this.exchangeHelpers[ticker].convert(balance, 'BTC').then((btcBalance) => {
-      const { balances } = this.state
-      const newBalances = Object.assign({}, balances)
-      newBalances[ticker] = btcBalance
-      const pledged = sum(values(newBalances))
-      this.setState({ balances: newBalances, pledged })
-    })
-  }
+  convertToBTC = (ticker, balance) => this.exchangeHelpers[ticker].convert(balance, 'BTC')
 
   fetchAddressBalance = ({ address, ticker }) => {
-    fetch(`${this.insights[ticker]}/api/addr/${address}/balance`)
+    fetch(`${this.insights[ticker]}/api/addr/${address}/unconfirmedBalance`)
       .then(response => response.text())
-      .then(value => this.convertToBTC(ticker, value))
+      .then(value => (ticker !== 'BTC' ? this.convertToBTC(ticker, value) : value))
+      .then((btcValue) => {
+        const { balances } = this.state
+        const newBalances = Object.assign({}, balances)
+        newBalances[ticker] = btcValue
+        console.log(btcValue)
+        const pledged = (sum(values(newBalances)) * 0.00000001).toFixed(8)
+        this.setState({ balances: newBalances, pledged })
+      })
       .catch(error => console.log(error))
   }
 

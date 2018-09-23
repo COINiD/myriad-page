@@ -8,6 +8,7 @@ $bar-height: 43px;
   border-radius: 16px;
   background-color: $gray;
   height: $bar-height;
+  overflow: hidden;
 
   &__progress {
     border-radius: 16px;
