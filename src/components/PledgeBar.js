@@ -24,7 +24,7 @@ class PledgeSection extends PureComponent {
     return (
       <div className="pledge-bar">
         <div className="pledge-bar__progress" style={{ width: `${progressPercent}%` }} />
-        <p className="pledge-bar__title">{`Pledged ${pledged} BTC`}</p>
+        <p className="pledge-bar__title">{`${pledged} BTC`}</p>
       </div>
     )
   }
