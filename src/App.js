@@ -36,7 +36,7 @@ class App extends PureComponent {
     } = this.state
 
     return (
-      <div className="App">
+      <div className="wrapper">
         <HeaderSection />
         <PledgeSection goal={goal} pledged={pledged} />
         <GoalsSection goals={goals} pledged={pledged} />
