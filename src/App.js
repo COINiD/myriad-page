@@ -23,7 +23,7 @@ class App extends PureComponent {
       XMY: 0.0,
     },
     endDate: moment.tz('2018-10-08 12:00', 'Europe/Stockholm'),
-    pledged: 4,
+    pledged: 0,
     goal: 5,
     goals: [
       {
