@@ -21,7 +21,9 @@ class PledgeSection extends PureComponent {
         <h2 className="pledge__title">Pledged</h2>
         <PledgeBar pledged={pledged} goal={goal} />
         <em className="pledge__notice">
-          {`Deadline for crowdfunding is ${endDate.format('D MMMM YYYY @ HH:mm z')}`}
+          Collected Myriads are counted towards the goal at the current exchange rate.
+          <br />
+          {`Deadline for crowdfunding is ${endDate.format('D MMMM YYYY @ HH:mm z')}.`}
         </em>
       </div>
     )
