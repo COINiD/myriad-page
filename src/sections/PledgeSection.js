@@ -18,7 +18,7 @@ class PledgeSection extends PureComponent {
     const { endDate, goal, pledged } = this.props
     return (
       <div className="pledge container">
-        <p className="pledge__title">Pledged</p>
+        <h2 className="pledge__title">Pledged</h2>
         <PledgeBar pledged={pledged} goal={goal} />
         <em className="pledge__notice">
           {`Deadline for crowdfunding is ${endDate.format('D MMMM YYYY @ HH:mm z')}`}

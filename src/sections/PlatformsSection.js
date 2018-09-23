@@ -6,7 +6,7 @@ import apple from '../assets/images/platform-apple.svg'
 
 const PlatformsSection = () => (
   <div className="platforms container">
-    <p className="platforms__title">Available platforms</p>
+    <h2 className="platforms__title">Available platforms</h2>
     <div className="platforms__container">
       <div className="platforms__platform">
         <img src={android} alt="Android" title="Android" className="platforms__icon" />
