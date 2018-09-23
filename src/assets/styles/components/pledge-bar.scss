@@ -11,6 +11,7 @@ $bar-height: 43px;
   overflow: hidden;
 
   &__progress {
+    transition: width 1.25s;
     border-radius: 16px;
     box-shadow: 0 2px 12px $shadow;
     background: linear-gradient(90deg, $highlight-primary 0%, $highlight-secondary 100%);
