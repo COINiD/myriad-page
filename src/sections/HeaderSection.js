@@ -7,8 +7,12 @@ const HeaderSection = () => (
   <div className="header">
     <img src={logo} className="header__logo" alt="logo" />
     <img src={background} className="header__background" alt="background" />
-    <div className="container">
-      <h1 className="header__title">Myriad Wallet for COINiD</h1>
+    <div className="header__container container">
+      <h1 className="header__title">
+        Myriad Wallet
+        <br />
+        for COINiD
+      </h1>
       <p className="header__intro">
         If the goals are met we will add support for Myriad in COINiD.
       </p>
