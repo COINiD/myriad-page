@@ -62,7 +62,6 @@ class App extends PureComponent {
 
       if (ticker !== 'BTC') {
         this.exchangeHelpers[ticker] = ExchangeHelper(ticker)
-        // this.exchangeHelpers[ticker].on('syncedexchange', this.onSyncedExchange)
       }
 
       this.fetchAddressBalance({ address, ticker })
@@ -75,30 +74,17 @@ class App extends PureComponent {
       const newBalances = Object.assign({}, balances)
       newBalances[ticker] = btcBalance
       const pledged = sum(values(newBalances))
-      console.log(newBalances, pledged)
       this.setState({ balances: newBalances, pledged })
     })
   }
 
-  // onSyncedExchange = (ticker, exhangeInfo) => {
-  //   console.log('tada', ticker)
-  //   this.refreshFiatBalance(ticker, 5)
-  // }
-
   fetchAddressBalance = ({ address, ticker }) => {
-    if (this.insights[ticker].length > 0) {
-      fetch(`${this.insights[ticker][0]}/addr/${address}/balance`, {
-        headers: { 'Content-Type': 'text/plain' },
-      })
-        .then(response => response.text())
-        .then(value => this.convertToBTC(ticker, value))
-        .catch(error => console.log(error))
-    }
-    // const requests = this.insights[ticker][0].map(api => fetch(`${api}/addr/${address}/balance`))
-    //
-    // Promise.race(requests).then((response) => {
-    //   console.log(response)
-    // })
+    const requests = this.insights[ticker].map(api => fetch(`${api}/addr/${address}/balance`))
+
+    Promise.race(requests)
+      .then(response => response.text())
+      .then(value => this.convertToBTC(ticker, value))
+      .catch(error => console.log(error))
   }
 
   render() {
