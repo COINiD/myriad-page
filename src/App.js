@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import logo from "./assets/images/coinid-logo.png";
-import "./App.css";
 
 class App extends Component {
   render() {
