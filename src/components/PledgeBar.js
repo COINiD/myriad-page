@@ -15,7 +15,11 @@ class PledgeSection extends PureComponent {
   render() {
     const { pledged, goal } = this.props
 
-    const progressPercent = (pledged / goal) * 100
+    let progressPercent = (pledged / goal) * 100
+
+    if (progressPercent > 100) {
+      progressPercent = 100
+    }
 
     return (
       <div className="pledge-bar">
