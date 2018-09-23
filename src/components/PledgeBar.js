@@ -21,6 +21,10 @@ class PledgeSection extends PureComponent {
       progressPercent = 100
     }
 
+    if (progressPercent > 0 && progressPercent < 0.1) {
+      progressPercent = 0.1
+    }
+
     return (
       <div className="pledge-bar">
         <div className="pledge-bar__progress" style={{ width: `${progressPercent}%` }} />
