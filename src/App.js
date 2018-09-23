@@ -12,10 +12,10 @@ import './assets/styles/shared/app.css'
 class App extends PureComponent {
   state = {
     coins: [
-      { ticker: 'BTC', address: '1NDpZ2wyFekVezssSXv2tmQgmxcoHMUJ7u' },
+      { ticker: 'BTC', address: '34Zmzk5jJU5AhQFzqyS72BEDx9ZTGa58X6' },
       {
         ticker: 'XMY',
-        address: 'MAgQdk6hSbux64MqPFFoV3NWTkEAn245R2',
+        address: 'MPYeuSbY6EUVCqkH1pPJVkZbBUp7fc4ATP',
       },
     ],
     balances: {
