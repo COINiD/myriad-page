@@ -33,7 +33,7 @@ class CollectionSection extends PureComponent {
             ))}
           </div>
           <p className="collection__info">
-            If goal is not met before the deadline coins sent will be returned to the sending
+            If the goal is not met before the deadline coins sent will be returned to the sending
             address.
           </p>
         </div>
