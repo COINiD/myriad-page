@@ -1,3 +1,32 @@
+@import "shared/colors.scss";
+@import "shared/fonts.scss";
+
 .collection {
-  margin-top: 40px;
+  &__container {
+    margin-top: 40px;
+    border-radius: 16px;
+    background-color: $white;
+    padding: 24px;
+    color: $black;
+  }
+
+  &__coin {
+    font-weight: bold;
+  }
+
+  &__ticker {
+    margin-right: 3px;
+  }
+
+  &__address {
+    color: $highlight-primary;
+  }
+
+  &__coins {
+    margin: 16px 0;
+  }
+
+  &__subtitle {
+    margin: 40px 0;
+  }
 }

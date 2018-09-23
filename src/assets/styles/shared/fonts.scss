@@ -1,3 +1,15 @@
 $font-size-medium: 24px;
 $font-size-regular: 18px;
 $font-size-small: 12px;
+
+
+h2,
+h3 {
+  margin: 0;
+  font-size: $font-size-medium;
+  font-weight: normal;
+}
+
+h3 {
+  font-weight: bold;
+}

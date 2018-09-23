@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react'
-import HeaderSection from './sections/HeaderSection'
-import PledgeSection from './sections/PledgeSection'
+import CollectionSection from './sections/CollectionSection'
 import GoalsSection from './sections/GoalsSection'
+import HeaderSection from './sections/HeaderSection'
 import PlatformsSection from './sections/PlatformsSection'
+import PledgeSection from './sections/PledgeSection'
 import './assets/styles/shared/app.css'
 
 class App extends PureComponent {
   state = {
+    coins: [{ ticker: 'BTC', address: 'XXXX' }, { ticker: 'XMY', address: 'TTT' }],
     pledged: 4,
     goal: 5,
     goals: [
@@ -29,7 +31,9 @@ class App extends PureComponent {
   }
 
   render() {
-    const { goal, goals, pledged } = this.state
+    const {
+      coins, goal, goals, pledged,
+    } = this.state
 
     return (
       <div className="App">
@@ -37,6 +41,7 @@ class App extends PureComponent {
         <PledgeSection goal={goal} pledged={pledged} />
         <GoalsSection goals={goals} pledged={pledged} />
         <PlatformsSection />
+        <CollectionSection coins={coins} />
       </div>
     )
   }
