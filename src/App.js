@@ -74,8 +74,15 @@ class App extends PureComponent {
         const { balances } = this.state
         const newBalances = Object.assign({}, balances)
         newBalances[ticker] = btcValue
-        console.log(btcValue)
-        const pledged = (sum(values(newBalances)) * 0.00000001).toFixed(8)
+
+        let pledged = sum(values(newBalances)) * 0.00000001
+
+        if (pledged <= 0.0) {
+          pledged = 0.0
+        } else {
+          pledged = pledged.toFixed(8)
+        }
+
         this.setState({ balances: newBalances, pledged })
       })
       .catch(error => console.log(error))
