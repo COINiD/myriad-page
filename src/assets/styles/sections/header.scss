@@ -19,7 +19,7 @@
   }
 }
 
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 768px) {
   .header {
     &__container {
       max-width: 520px;
@@ -27,7 +27,6 @@
 
     &__logo {
       position: relative;
-      max-width: 620px;
     }
 
     &__background {
@@ -35,6 +34,7 @@
       top: 0;
       right: 0;
       width: 45%;
+      max-width: 680px;
     }
 
     &__title {
