@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import '../assets/styles/components/goal.css'
+import checkbox from '../assets/images/checkbox.png'
 
 class Goal extends PureComponent {
   static propTypes = {
@@ -24,9 +25,12 @@ class Goal extends PureComponent {
     return (
       <div className="goal">
         <p className="goal__title">{title}</p>
-        <p className={['goal__amount', completed ? 'goal__amount--completed' : null].join(' ')}>
-          {`${amount} BTC`}
-        </p>
+        <div className="goal__amount-container">
+          <p className={['goal__amount', completed ? 'goal__amount--completed' : null].join(' ')}>
+            {`${amount} BTC`}
+          </p>
+          {completed && <img src={checkbox} alt="Completed" className="goal__completed" />}
+        </div>
         {includes.map((included, i) => (
           <p key={i} className="goal__included">{`- ${included}`}</p>
         ))}
