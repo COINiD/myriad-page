@@ -2,8 +2,19 @@
 @import "shared/fonts.scss";
 
 .pledge {
+  &__title {
+    margin: 0.9em 0;
+  }
+
   &__notice {
+    margin-top: 0.7em;
     color: $gray-light;
     font-size: $font-size-small;
+  }
+}
+
+@media only screen and (min-device-width: 768px) {
+  .pledge {
+    max-width: 500px;
   }
 }
