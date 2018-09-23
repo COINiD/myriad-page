@@ -10,10 +10,11 @@ class CollectionSection extends PureComponent {
         address: PropTypes.string.isRequired,
       }),
     ).isRequired,
+    insights: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
   }
 
   renderCollection = () => {
-    const { coins } = this.props
+    const { coins, insights } = this.props
     return (
       <div className="collection container">
         <div className="collection__container">
@@ -22,7 +23,12 @@ class CollectionSection extends PureComponent {
             {coins.map(coin => (
               <div className="collection__coin" key={coin.ticker}>
                 <span className="collection__ticker">{coin.ticker}</span>
-                <span className="collection__address">{coin.address}</span>
+                <a
+                  className="collection__address"
+                  href={`${insights[coin.ticker]}/address/${coin.address}`}
+                >
+                  {coin.address}
+                </a>
               </div>
             ))}
           </div>

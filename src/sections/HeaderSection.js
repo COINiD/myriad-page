@@ -5,7 +5,9 @@ import background from '../assets/images/bg.png'
 
 const HeaderSection = () => (
   <div className="header">
-    <img src={logo} className="header__logo" alt="logo" />
+    <a href="https://coinid.org">
+      <img src={logo} className="header__logo" alt="logo" />
+    </a>
     <img src={background} className="header__background" alt="background" />
     <div className="header__container container">
       <h1 className="header__title">

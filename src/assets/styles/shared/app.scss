@@ -19,3 +19,13 @@ body {
   margin: 0 auto;
   max-width: 900px;
 }
+
+a {
+  transition: opacity 0.15s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

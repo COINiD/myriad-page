@@ -45,8 +45,8 @@ class App extends PureComponent {
   }
 
   insights = {
-    BTC: 'https://btc-bitcore1.coinid.org/api',
-    XMY: 'https://myriadexplorer.com/api',
+    BTC: 'https://btc-bitcore1.coinid.org',
+    XMY: 'https://myriadexplorer.com',
   }
 
   exchangeHelpers = {}
@@ -60,7 +60,7 @@ class App extends PureComponent {
         this.exchangeHelpers[ticker] = ExchangeHelper(ticker)
       }
 
-      this.fetchAddressBalance({ address, ticker })
+      return this.fetchAddressBalance({ address, ticker })
     })
   }
 
@@ -75,7 +75,7 @@ class App extends PureComponent {
   }
 
   fetchAddressBalance = ({ address, ticker }) => {
-    fetch(`${this.insights[ticker]}/addr/${address}/balance`)
+    fetch(`${this.insights[ticker]}/api/addr/${address}/balance`)
       .then(response => response.text())
       .then(value => this.convertToBTC(ticker, value))
       .catch(error => console.log(error))
@@ -92,7 +92,7 @@ class App extends PureComponent {
         <PledgeSection goal={goal} pledged={pledged} endDate={endDate} />
         <GoalsSection goals={goals} pledged={pledged} />
         <PlatformsSection />
-        <CollectionSection coins={coins} />
+        <CollectionSection coins={coins} insights={this.insights} />
       </div>
     )
   }

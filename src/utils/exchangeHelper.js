@@ -8,7 +8,7 @@ import { EventEmitter } from 'events'
 const apiUrl = 'https://min-api.cryptocompare.com/data'
 
 const fetchFromPriceApi = (ticker, currency) => {
-  const url = `${apiUrl}/` + 'price' + `?fsym=${ticker.toUpperCase()}&tsyms=${currency.toUpperCase()}`
+  const url = `${apiUrl}/price?fsym=${ticker.toUpperCase()}&tsyms=${currency.toUpperCase()}`
 
   return fetch(url)
     .then(r => r.json())
@@ -18,8 +18,8 @@ const fetchFromPriceApi = (ticker, currency) => {
 class ExchangeHelper extends EventEmitter {
   constructor(coin) {
     super()
-    coin = coin == 'TBTC' ? 'BTC' : coin
-    this.ticker = coin
+    const newCoin = coin === 'TBTC' ? 'BTC' : coin
+    this.ticker = newCoin
     this.currencyArr = ['BTC']
   }
 
