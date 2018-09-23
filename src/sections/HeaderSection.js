@@ -6,9 +6,9 @@ import background from '../assets/images/bg.png'
 const HeaderSection = () => (
   <div className="header">
     <a href="https://coinid.org">
-      <img src={logo} className="header__logo" alt="logo" />
+      <img src={logo} className="header__logo" alt="logo" rel="preload" />
     </a>
-    <img src={background} className="header__background" alt="background" />
+    <img src={background} className="header__background" alt="background" rel="preload" />
     <div className="header__container container">
       <h1 className="header__title">
         Myriad Wallet
