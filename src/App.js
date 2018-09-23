@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import moment from 'moment-timezone'
 import CollectionSection from './sections/CollectionSection'
 import GoalsSection from './sections/GoalsSection'
 import HeaderSection from './sections/HeaderSection'
@@ -9,6 +10,7 @@ import './assets/styles/shared/app.css'
 class App extends PureComponent {
   state = {
     coins: [{ ticker: 'BTC', address: 'XXXX' }, { ticker: 'XMY', address: 'TTT' }],
+    endDate: moment.tz('2018-10-08 12:00', 'Europe/Stockholm'),
     pledged: 4,
     goal: 5,
     goals: [
@@ -32,13 +34,13 @@ class App extends PureComponent {
 
   render() {
     const {
-      coins, goal, goals, pledged,
+      coins, endDate, goal, goals, pledged,
     } = this.state
 
     return (
       <div className="wrapper">
         <HeaderSection />
-        <PledgeSection goal={goal} pledged={pledged} />
+        <PledgeSection goal={goal} pledged={pledged} endDate={endDate} />
         <GoalsSection goals={goals} pledged={pledged} />
         <PlatformsSection />
         <CollectionSection coins={coins} />

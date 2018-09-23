@@ -7,6 +7,7 @@ class PledgeSection extends PureComponent {
   static propTypes = {
     pledged: PropTypes.number,
     goal: PropTypes.number.isRequired,
+    endDate: PropTypes.shape({}).isRequired,
   }
 
   static defaultProps = {
@@ -14,12 +15,14 @@ class PledgeSection extends PureComponent {
   }
 
   render() {
-    const { pledged, goal } = this.props
+    const { endDate, goal, pledged } = this.props
     return (
       <div className="pledge container">
         <p className="pledge__title">Pledged</p>
         <PledgeBar pledged={pledged} goal={goal} />
-        <em className="pledge__notice">Deadline for crowdfunding is October 5 2018</em>
+        <em className="pledge__notice">
+          {`Deadline for crowdfunding is ${endDate.format('D MMMM YYYY @ HH:mm z')}`}
+        </em>
       </div>
     )
   }
