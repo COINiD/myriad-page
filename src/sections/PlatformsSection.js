@@ -9,14 +9,14 @@ const PlatformsSection = () => (
     <p className="platforms__title">Available platforms</p>
     <div className="platforms__container">
       <div className="platforms__platform">
-        <img src={android} alt="Android" className="platforms__icon" />
+        <img src={android} alt="Android" title="Android" className="platforms__icon" />
       </div>
       <div className="platforms__platform">
-        <img src={apple} alt="Apple" className="platforms__icon" />
+        <img src={apple} alt="Apple" title="Apple iOS" className="platforms__icon" />
         <span className="platforms__asterix">*</span>
       </div>
       <div className="platforms__platform">
-        <img src={desktop} alt="Desktop" className="platforms__icon" />
+        <img src={desktop} alt="Desktop" title="Desktop" className="platforms__icon" />
         <span className="platforms__asterix">*</span>
       </div>
     </div>
