@@ -45,12 +45,8 @@ class App extends PureComponent {
   }
 
   insights = {
-    BTC: [
-      'https://btc-bitcore1.coinid.org/api',
-      'https://btc-bitcore2.coinid.org/api',
-      'https://btc-bitcore3.coinid.org/api',
-    ],
-    XMY: ['https://myriadexplorer.com/api'],
+    BTC: 'https://btc-bitcore1.coinid.org/api',
+    XMY: 'https://myriadexplorer.com/api',
   }
 
   exchangeHelpers = {}
@@ -79,9 +75,7 @@ class App extends PureComponent {
   }
 
   fetchAddressBalance = ({ address, ticker }) => {
-    const requests = this.insights[ticker].map(api => fetch(`${api}/addr/${address}/balance`))
-
-    Promise.race(requests)
+    fetch(`${this.insights[ticker]}/addr/${address}/balance`)
       .then(response => response.text())
       .then(value => this.convertToBTC(ticker, value))
       .catch(error => console.log(error))
