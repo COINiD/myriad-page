@@ -1,0 +1,9 @@
+@import "shared/colors.scss";
+@import "shared/fonts.scss";
+
+.pledge {
+  &__notice {
+    color: $gray-light;
+    font-size: $font-size-small;
+  }
+}
