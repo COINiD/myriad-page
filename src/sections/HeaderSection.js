@@ -16,7 +16,7 @@ const HeaderSection = () => (
         by COINiD
       </h1>
       <p className="header__intro">
-        If the goals are met we will release a Myriad branded version of the COINiD wallet.
+        If the goals are met we will release a Myriad branded version of the COINiD Wallet.
       </p>
     </div>
   </div>
