@@ -13,10 +13,10 @@ const HeaderSection = () => (
       <h1 className="header__title">
         Myriad Wallet
         <br />
-        for COINiD
+        by COINiD
       </h1>
       <p className="header__intro">
-        If the goals are met we will add support for Myriad in COINiD.
+        If the goals are met we will release a Myriad branded version of the COINiD wallet.
       </p>
     </div>
   </div>

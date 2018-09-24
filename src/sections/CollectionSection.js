@@ -37,7 +37,7 @@ class CollectionSection extends PureComponent {
             address.
           </p>
         </div>
-        <h3 className="collection__subtitle">Happy crowfunding!</h3>
+        <h3 className="collection__subtitle">Happy crowdfunding!</h3>
       </div>
     )
   }
