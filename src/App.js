@@ -45,8 +45,8 @@ class App extends PureComponent {
   }
 
   insights = {
-    BTC: 'https://btc-bitcore1.coinid.org',
-    XMY: 'http://insight-myr.cryptap.us',
+    BTC: 'https://btc-blockbook1.coinid.org',
+    XMY: 'https://xmy-blockbook1.coinid.org',
   }
 
   exchangeHelpers = {}
@@ -68,14 +68,13 @@ class App extends PureComponent {
 
   fetchAddressBalance = ({ address, ticker }) => {
     const requests = [
-      fetch(`${this.insights[ticker]}/api/addr/${address}/unconfirmedBalance`),
-      fetch(`${this.insights[ticker]}/api/addr/${address}/balance`),
+      fetch(`${this.insights[ticker]}/api/address/${address}`),
     ]
 
     Promise.all(requests)
-      .then(responses => Promise.all(responses.map(res => res.text())))
+      .then(responses => Promise.all(responses.map(res => res.json())))
       .then((balances) => {
-        const total = sum(balances.map(balance => parseInt(balance)))
+        const total = sum(balances.map(balance => Number(balance.balance)))
         return ticker !== 'BTC' ? this.convertToBTC(ticker, total) : total
       })
       .then((btcValue) => {
@@ -83,7 +82,7 @@ class App extends PureComponent {
         const newBalances = Object.assign({}, balances)
         newBalances[ticker] = btcValue
 
-        let pledged = sum(values(newBalances)) * 0.00000001
+        let pledged = sum(values(newBalances))
 
         if (pledged <= 0.0) {
           pledged = 0.0
