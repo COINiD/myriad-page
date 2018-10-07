@@ -46,7 +46,7 @@ class App extends PureComponent {
 
   insights = {
     BTC: 'https://btc-bitcore1.coinid.org',
-    XMY: 'https://myriadexplorer.com',
+    XMY: 'http://insight-myr.cryptap.us',
   }
 
   exchangeHelpers = {}
